@@ -28,8 +28,20 @@ const App = () => {
 
     const deleteTodo = (id) => {
         setTodos(todos.filter((todo) => {todo.id !== id}))
-    };
-
+    }
+    return  (
+        <Fragment>
+            <Title username={name} />
+            <Form addTodo={addTodo} />
+            <List todos={todos} deleteTodo={deleteTodo} />
+            <button
+            onClick= {() => {
+                setName('yui');
+            }}
+            >
+            </button>
+        </Fragment>
+    );
 };
 
 export default App;
